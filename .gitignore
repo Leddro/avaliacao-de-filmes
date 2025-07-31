@@ -1,0 +1,15 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Pastas de IDEs
+.vscode/
+.idea/
+
+# Logs e backups
+*.log
+*.bak
+
+# Outras pastas comuns a ignorar
+node_modules/
+dist/

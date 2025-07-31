@@ -2,6 +2,8 @@ const botoesAvaliar = document.querySelectorAll('.avaliar-btn');
 const botoesDetalhes = document.querySelectorAll('.detalhes-btn');
 const botoesFavoritar = document.querySelectorAll('.favoritar-btn');
 const botoesEnviar = document.querySelectorAll('.enviar-avaliacao');
+const botoesEditar = document.querySelectorAll('.editar-btn');
+const salvarTitulo = document.querySelectorAll('.salvar-titulo-btn');
 
 botoesAvaliar.forEach((botao) => {
   botao.addEventListener('click', () => {
@@ -40,3 +42,23 @@ botoesEnviar.forEach((botao) => {
     alert(`Você avaliou "${titulo}" com nota ${nota}.\nComentário: ${comentario}`);
   });
 });
+botoesEditar.forEach((botao) => {
+  botao.addEventListener('click', () => {
+    const filmeInfo = botao.closest('.filme-info');
+    const formularioTitulo = filmeInfo.querySelector('.formulario-editar-titulo');
+    
+    formularioTitulo.style.display = formularioTitulo.style.display === 'none' ? 'block' : 'none';
+  })
+})
+
+salvarTitulo.forEach((botao) => {
+  botao.addEventListener('click', () => {
+    const filmeInfo = botao.closest('.filme-info');
+    const tituloElement = filmeInfo.querySelector('h2');
+    const tituloAntigo = tituloElement.textContent;
+    const novoTitulo = filmeInfo.querySelector('.novo-titulo').value;
+    tituloElement.textContent = novoTitulo;
+
+    alert(`Você alterou o título de ${tituloAntigo} para ${novoTitulo}`);
+  })
+})
