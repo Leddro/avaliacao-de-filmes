@@ -1,0 +1,73 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.filme-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    overflow: hidden;
+}
+.filme-card img {
+  width: 150px;
+  height: auto;
+}
+.filme-info {
+  padding: 20px;
+}
+.filme-info h2 {
+  margin-top: 0;
+}
+
+.filme-info p {
+  margin: 5px 0;
+}
+.avaliar-btn{
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.avaliar-btn:hover{
+    background-color: #0056b3;
+}
+.detalhes-btn{
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.detalhes-btn:hover{
+    background-color: #5a6268;
+}
+.favoritar-btn{
+   background-color: #f1c40f;
+   margin-left: 10px;
+   border-radius: 12px;
+   border: none;
+   color: black;
+   padding: 5px 10px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+.favoritar-btn:hover{
+    background-color: #d4ac0d;
+}
