@@ -5,6 +5,17 @@ const botoesEnviar = document.querySelectorAll('.enviar-avaliacao');
 const botoesEditar = document.querySelectorAll('.editar-btn');
 const salvarTitulo = document.querySelectorAll('.salvar-titulo-btn');
 
+window.addEventListener('DOMContentLoaded', () => {
+  const titulos = document.querySelectorAll('.filme-info h2');
+  
+  titulos.forEach((titulo, index) => {
+    const salvo = localStorage.getItem(`titulo-filme-${index}`);
+    if (salvo) {
+      titulo.textContent = salvo;
+    }
+  });
+});
+
 botoesAvaliar.forEach((botao) => {
   botao.addEventListener('click', () => {
     const filmeInfo = botao.closest('.filme-info');
@@ -58,14 +69,18 @@ botoesEditar.forEach((botao) => {
   })
 })
 
-salvarTitulo.forEach((botao) => {
+salvarTitulo.forEach((botao, index) => {
   botao.addEventListener('click', () => {
     const filmeInfo = botao.closest('.filme-info');
     const tituloElement = filmeInfo.querySelector('h2');
-    const tituloAntigo = tituloElement.textContent;
     const novoTitulo = filmeInfo.querySelector('.novo-titulo').value;
+
+    // Salva no elemento visual
     tituloElement.textContent = novoTitulo;
 
-    alert(`Você alterou o título de ${tituloAntigo} para ${novoTitulo}`);
-  })
-})
+    // Salva no localStorage com uma chave baseada no índice do card
+    localStorage.setItem(`titulo-filme-${index}`, novoTitulo);
+
+    alert(`Título salvo: ${novoTitulo}`);
+  });
+});
