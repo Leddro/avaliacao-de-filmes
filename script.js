@@ -19,7 +19,14 @@ botoesDetalhes.forEach((botao) => {
 });
 botoesFavoritar.forEach((botao) => {
   botao.addEventListener('click', () => {
-    alert('Você favoritou um filme!');
+    const favorito = botao.classList.toggle('favoritado');
+
+    if(favorito){
+      botao.textContent = '⭐ Favoritado';
+    }
+    else{
+      botao.textContent = '⭐';
+    }
   });
 });
 botoesAvaliar.forEach((botao) => {
